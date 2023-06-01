@@ -5,13 +5,42 @@ M.general = {
     ["kj"] = { "<ESC>", "escape insert mode" , opts = { nowait = true }},
   },
 
-  -- for nvim tmux navigation settings
   n = {
+    -- for nvim tmux navigation settings
     ["<C-h>"] = {"<cmd> TmuxNavigateLeft<CR>", "window left"},
     ["<C-l>"] = {"<cmd> TmuxNavigateRight<CR>", "window right"},
     ["<C-j>"] = {"<cmd> TmuxNavigateDown<CR>", "window down"},
     ["<C-k>"] = {"<cmd> TmuxNavigateUp<CR>", "window up"},
+  },
+
+  v = {
+    -- Stay in indent mode
+    ["<"] = {"<gv", "indent left and stay in indent mode"},
+    [">"] = {">gv", "indent right and stay in indent mode"},
   }
+}
+
+M.movelines = {
+  i = {
+    -- inoremap <A-j> <Esc>:m .+1<CR>==gi
+    -- inoremap <A-k> <Esc>:m .-2<CR>==gi
+    ["<A-j>"] = {"<Esc>:m .+1<CR>==gi", "moveline down"},
+    ["<A-k>"] = {"<Esc>:m .-2<CR>==gi", "moveline up"},
+  },
+
+  n = {
+    -- nnoremap <A-j> :m .+1<CR>==
+    -- nnoremap <A-k> :m .-2<CR>==
+    ["<A-j>"] = {":m .+1<CR>==", "moveline down"},
+    ["<A-k>"] = {":m .-2<CR>==", "moveline up"},
+  },
+
+  v = {
+    -- vnoremap <A-j> :m '>+1<CR>gv=gv
+    -- vnoremap <A-k> :m '<-2<CR>gv=gv
+    ["<A-j>"] = {":m '>+1<CR>gv=gv", "moveline down"},
+    ["<A-k>"] = {":m '<-2<CR>gv=gv", "moveline up"},
+  },
 }
 
 M.transparency = {
