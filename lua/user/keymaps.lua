@@ -21,10 +21,10 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts) -- left
-keymap("n", "<C-j>", "<C-w>j", opts) -- down
-keymap("n", "<C-k>", "<C-w>k", opts) -- up
-keymap("n", "<C-l>", "<C-w>l", opts) -- right
+-- keymap("n", "<C-h>", "<C-w>h", opts) -- left
+-- keymap("n", "<C-j>", "<C-w>j", opts) -- down
+-- keymap("n", "<C-k>", "<C-w>k", opts) -- up
+-- keymap("n", "<C-l>", "<C-w>l", opts) -- right
 
 -- open file exploer on the left
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
