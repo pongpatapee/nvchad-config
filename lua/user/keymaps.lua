@@ -39,6 +39,12 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<Tab>", ":bnext<CR>", opts) -- tab keybinds from nvchad
 keymap("n", "<S-Tab>", ":bprevious<CR>", opts)
 
+-- Navigate with tmux panes
+keymap("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", opts)
+keymap("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", opts)
+keymap("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", opts)
+keymap("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", opts)
+
 -- Clear highlight search
 keymap("n", "<Esc>", ":nohl<CR>", opts)
 
