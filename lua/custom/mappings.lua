@@ -20,6 +20,35 @@ M.general = {
   }
 }
 
+M.nvimtree = {
+  n = {
+    -- toggle
+    ["<leader>e"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
+
+    -- focus
+    ["<C-n>"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+  },
+}
+
+M.tabufline = {
+  n = {
+    -- move between buffers
+    ["<S-l>"] = {
+      function()
+        require("nvchad_ui.tabufline").tabuflineNext()
+      end,
+      "Goto next buffer",
+    },
+
+    ["<S-h>"] = {
+      function()
+        require("nvchad_ui.tabufline").tabuflinePrev()
+      end,
+      "Goto prev buffer",
+    },
+  },
+}
+
 M.movelines = {
   i = {
     -- inoremap <A-j> <Esc>:m .+1<CR>==gi
