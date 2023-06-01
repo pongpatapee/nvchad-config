@@ -1,3 +1,5 @@
+local overrides = require("custom.configs.overrides")
+
 local plugins = {
 
   -- lsp config for linting and formatting
@@ -31,30 +33,20 @@ local plugins = {
       vim.fn["mkdp#util#install"]()
     end,
   },
+
+  {
+    "williamboman/mason.nvim",
+    opts = overrides.mason,
+  },
+
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        -- defaults 
-        "vim",
-        "lua",
+    opts = overrides.treesitter,
+  },
 
-        -- web dev 
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "tsx",
-        "json",
-        -- "vue", "svelte",
-        -- datasci/ml
-        "python",
-
-       -- low level
-        "c",
-        "zig"
-      },
-    },
-  }
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = overrides.nvimtree,
+  },
 }
 return plugins
