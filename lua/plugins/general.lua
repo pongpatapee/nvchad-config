@@ -6,7 +6,13 @@ return {
     lazy = false,
   },
 
-  -- comments
-
-
+  {
+    "numToStr/Comment.nvim",
+    keys = {
+      { "gcc", mode = "n" },
+      { "gc", mode = "v" },
+      { "gbc", mode = "n" },
+      { "gb", mode = "v" },
+    },
+  },
 }

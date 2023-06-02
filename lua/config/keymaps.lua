@@ -13,3 +13,9 @@ map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", opts)
 map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", opts)
 map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", opts)
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", opts)
+
+-- editor like comment binds
+vim.keymap.set("n", "<C-_>", function()
+  require("Comment.api").toggle.linewise.current()
+end, opts)
+vim.keymap.set("v", "<C-_>", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
