@@ -32,6 +32,4 @@ map("n", "<C-d>", "<C-d>zz", opts)
 map("v", "y", "ygv<ESC>", opts)
 
 -- allow for Ctrl + Backspace for deleting words
--- not working right now for some reason
--- map("i", "<C-BS>", "<ESC>cvb", {})
-map("i", "<C-BS>", "<C-w>", opts)
+map("i", "<C-h>", "<C-w>", opts) -- Can't bind <C-BS> directly, this is the work around
