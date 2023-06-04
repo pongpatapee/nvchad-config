@@ -29,7 +29,7 @@ map("n", "<C-u>", "<C-u>zz", opts)
 map("n", "<C-d>", "<C-d>zz", opts)
 
 -- keeps cursor where it is after yank (by default it goes back up to the top)
-map("n", "y", "ygv<ESC>", opts)
+map("v", "y", "ygv<ESC>", opts)
 
 -- allow for Ctrl + Backspace for deleting words
 -- not working right now for some reason
