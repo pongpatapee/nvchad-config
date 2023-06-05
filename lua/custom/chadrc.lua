@@ -2,7 +2,7 @@
 local M = {}
 M.ui = {
   nvdash = {load_on_startup = true},
-  theme = 'catppuccin',
+  theme = 'vscode_dark',
   transparency = false,
   statusline = {
     theme = "minimal"

@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 local plugins = {
 
@@ -34,6 +34,7 @@ local plugins = {
     end,
   },
 
+  -- essential plugins
   {
     "williamboman/mason.nvim",
     opts = overrides.mason,

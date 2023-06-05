@@ -13,8 +13,10 @@ M.general = {
     ["<C-k>"] = {"<cmd> TmuxNavigateUp<CR>", "window up"},
 
     -- split panes
-    ["<leader>v"] = {"<cmd> vsplit<CR>", "split window vertically"},
-    ["<leader>h"] = {"<cmd> split<CR>", "split window horizontally"},
+    ["<leader>|"] = {"<cmd> vsplit<CR>", "split window vertically"},
+    ["<leader>-"] = {"<cmd> split<CR>", "split window horizontally"},
+    ["<leader>\\"] = {"<cmd> vsplit<CR>", "split window vertically"},
+    ["<leader>_"] = {"<cmd> split<CR>", "split window horizontally"},
   },
 
   v = {
