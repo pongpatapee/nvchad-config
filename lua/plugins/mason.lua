@@ -6,7 +6,7 @@ return {
         "stylua",
         "shellcheck",
         "shfmt",
-        "flake8",
+        "pyright",
       },
     },
   },
