@@ -7,6 +7,7 @@ return {
       table.insert(opts.ensure_installed, "shellcheck")
       table.insert(opts.ensure_installed, "shfmt")
       table.insert(opts.ensure_installed, "pyright")
+      table.insert(opts.ensure_installed, "black")
       table.insert(opts.ensure_installed, "deno")
     end,
 
