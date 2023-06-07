@@ -1,5 +1,3 @@
 # My Neovim config
 
-## 💤 LazyVim
-
-now using LazyVim
+Blank slate, checkout other branches for configs
