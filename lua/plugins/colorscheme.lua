@@ -1,6 +1,12 @@
 return {
   -- add catppuccin
-  { "catppuccin/nvim", name = "catppuccin", flavor = "mocha" },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = {
+      flavour = "mocha", -- latte, frappe, macchiato, mocha
+    },
+  },
 
   -- onedark theme
   {
@@ -20,11 +26,14 @@ return {
     "lunarvim/darkplus.nvim",
   },
 
+  -- gruvbox
+  { "ellisonleao/gruvbox.nvim" },
+
   -- Configure LazyVim to load colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "darkplus",
+      colorscheme = "gruvbox",
     },
   },
 }

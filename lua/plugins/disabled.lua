@@ -1,12 +1,20 @@
 -- disabling LazyVim plugins I dont' want
 
 return {
+
+  -- Changes f,F,t,T behaviors
   {
     "ggandor/flit.nvim",
     enabled = false,
   },
   {
     "ggandor/leap.nvim",
+    enabled = false,
+  },
+
+  -- Notification bar on the top right
+  {
+    "rcarriga/nvim-notify",
     enabled = false,
   },
 }
