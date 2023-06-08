@@ -3,6 +3,7 @@ return {
   {
     "catppuccin/nvim",
     name = "catppuccin",
+    lazy = false,
     opts = {
       flavour = "mocha", -- latte, frappe, macchiato, mocha
     },
@@ -11,6 +12,7 @@ return {
   -- onedark theme
   {
     "navarasu/onedark.nvim",
+    lazy = false,
     opts = {
       --main options
       style = "warmer", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
@@ -24,10 +26,14 @@ return {
   -- vscode darkplus theme
   {
     "lunarvim/darkplus.nvim",
+    lazy = false,
   },
 
   -- gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  {
+    "ellisonleao/gruvbox.nvim",
+    lazy = false,
+  },
 
   -- Configure LazyVim to load colorscheme
   {
