@@ -20,6 +20,8 @@ vim.keymap.set("n", "<C-_>", function()
 end, opts)
 vim.keymap.set("v", "<C-_>", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 
+-- TODO map comments without installing a new comment api
+
 -- split screen
 map("n", "<leader>\\", "<cmd> vsplit<CR>", { desc = "Split window right", noremap = true, silent = true }) -- alternate bind to <leader> |
 map("n", "<leader>_", "<cmd> split<CR>", { desc = "Split window below", noremap = true, silent = true }) -- alternate bind to <leader> -

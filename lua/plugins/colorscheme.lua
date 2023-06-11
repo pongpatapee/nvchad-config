@@ -33,14 +33,17 @@ return {
   {
     "folke/tokyonight.nvim",
     lazy = false,
-    -- priority = 1000,
-    -- opts = {},
   },
 
   -- gruvbox
   {
     "ellisonleao/gruvbox.nvim",
     lazy = false,
+  },
+
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = true,
   },
 
   -- Configure LazyVim to load colorscheme
