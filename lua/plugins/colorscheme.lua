@@ -29,6 +29,14 @@ return {
     lazy = false,
   },
 
+  -- ensure tokyonight colors are here
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    -- priority = 1000,
+    -- opts = {},
+  },
+
   -- gruvbox
   {
     "ellisonleao/gruvbox.nvim",
@@ -39,7 +47,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "darkplus",
+      colorscheme = "catppuccin",
     },
   },
 }
