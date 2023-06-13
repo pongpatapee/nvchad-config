@@ -2,8 +2,9 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
+local Util = require("lazyvim.util")
 
 -- better escape
 map("i", "kj", "<ESC>", opts)
@@ -15,10 +16,10 @@ map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", opts)
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", opts)
 
 -- editor like comment binds
-vim.keymap.set("n", "<C-_>", function()
+map("n", "<C-_>", function()
   require("Comment.api").toggle.linewise.current()
 end, opts)
-vim.keymap.set("v", "<C-_>", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
+map("v", "<C-_>", "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", opts)
 
 -- TODO map comments without installing a new comment api
 
@@ -35,3 +36,10 @@ map("v", "y", "ygv<ESC>", opts)
 
 -- allow for Ctrl + Backspace for deleting words
 map("i", "<C-h>", "<C-w>", opts) -- Can't bind <C-BS> directly, this is the work around
+
+-- floating terminal
+local lazyterm = function()
+  Util.float_term(nil, { cwd = Util.get_root() })
+end
+map("n", "<A-i>", lazyterm, { desc = "Terminal (root dir)" })
+map("t", "<A-i>", "<cmd>close<cr>", { desc = "Hide Terminal" })
