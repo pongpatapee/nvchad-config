@@ -1,6 +1,7 @@
 return {
   {
-    "HiPhish/nvim-ts-rainbow2",
+    -- "p00f/nvim-ts-rainbow", -- rainbow 1 (no longer maintained)
+    "HiPhish/nvim-ts-rainbow2", -- (rainbow 2)
   },
 
   {
@@ -21,6 +22,7 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "go",
       },
 
       rainbow = {
@@ -28,6 +30,18 @@ return {
         -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
         extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
         -- max_file_lines = nil, -- Do not enable for files with more than n lines, int
+
+        -- colors = {
+        --   -- "#68a0b0",
+        --   -- "#946EaD",
+        --   -- "#c7aA6D",
+        --   -- "Gold",
+        --   -- "Orchid",
+        --   -- "DodgerBlue",
+        --   "Cornsilk",
+        --   "Salmon",
+        --   "LawnGreen",
+        -- },
       },
     },
   },
