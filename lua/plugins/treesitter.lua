@@ -23,6 +23,9 @@ return {
         "vim",
         "yaml",
         "go",
+        "gomod",
+        "gowork",
+        "gosum",
       },
 
       rainbow = {
