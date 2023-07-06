@@ -9,8 +9,6 @@ return {
       table.insert(opts.ensure_installed, "pyright")
       table.insert(opts.ensure_installed, "black")
       table.insert(opts.ensure_installed, "deno")
-      table.insert(opts.ensure_installed, "clang_format")
-      table.insert(opts.ensure_installed, "clangd")
     end,
 
     {},
