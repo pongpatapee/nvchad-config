@@ -13,10 +13,10 @@ return {
   },
 
   -- Notification bar on the top right
-  {
-    "rcarriga/nvim-notify",
-    enabled = false,
-  },
+  -- {
+  --   "rcarriga/nvim-notify",
+  --   enabled = false,
+  -- },
 
   -- {
   --   "folke/noice.nvim",
