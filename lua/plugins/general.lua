@@ -49,36 +49,48 @@ return {
     },
   },
 
-  -- Transparent background
+  -- nvim surround
   {
-    "xiyaowong/transparent.nvim",
-    opts = {
-      groups = { -- table: default groups
-        "Normal",
-        "NormalNC",
-        "Comment",
-        "Constant",
-        "Special",
-        "Identifier",
-        "Statement",
-        "PreProc",
-        "Type",
-        "Underlined",
-        "Todo",
-        "String",
-        "Function",
-        "Conditional",
-        "Repeat",
-        "Operator",
-        "Structure",
-        "LineNr",
-        "NonText",
-        "SignColumn",
-        "CursorLineNr",
-        "EndOfBuffer",
-      },
-      extra_groups = {}, -- table: additional groups that should be cleared
-      exclude_groups = {}, -- table: groups you don't want to clear
-    },
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
+    end,
   },
+
+  -- Transparent background
+  -- {
+  --   "xiyaowong/transparent.nvim",
+  --   opts = {
+  --     groups = { -- table: default groups
+  --       "Normal",
+  --       "NormalNC",
+  --       "Comment",
+  --       "Constant",
+  --       "Special",
+  --       "Identifier",
+  --       "Statement",
+  --       "PreProc",
+  --       "Type",
+  --       "Underlined",
+  --       "Todo",
+  --       "String",
+  --       "Function",
+  --       "Conditional",
+  --       "Repeat",
+  --       "Operator",
+  --       "Structure",
+  --       "LineNr",
+  --       "NonText",
+  --       "SignColumn",
+  --       "CursorLineNr",
+  --       "EndOfBuffer",
+  --     },
+  --     extra_groups = {}, -- table: additional groups that should be cleared
+  --     exclude_groups = {}, -- table: groups you don't want to clear
+  --   },
+  -- },
 }
