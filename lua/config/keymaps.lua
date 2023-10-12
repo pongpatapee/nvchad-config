@@ -39,7 +39,7 @@ map("i", "<C-h>", "<C-w>", opts) -- Can't bind <C-BS> directly, this is the work
 
 -- floating terminal
 local lazyterm = function()
-  Util.float_term(nil, { cwd = Util.get_root() })
+  Util.terminal(nil, { cwd = Util.root() })
 end
 map("n", "<A-i>", lazyterm, { desc = "Terminal (root dir)" })
 map("t", "<A-i>", "<cmd>close<cr>", { desc = "Hide Terminal" })
