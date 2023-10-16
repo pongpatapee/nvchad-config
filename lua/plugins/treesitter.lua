@@ -26,6 +26,7 @@ return {
         "gomod",
         "gowork",
         "gosum",
+        "c_sharp",
       },
 
       rainbow = {

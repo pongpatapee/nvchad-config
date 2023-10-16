@@ -17,7 +17,7 @@ return {
     opts = {
       --main options
       style = "dark", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-      transparent = true, -- Show/hide background
+      transparent = false, -- Show/hide background
       term_colors = true, -- Change terminal color as per the selected theme style
       ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
       cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
@@ -44,14 +44,20 @@ return {
 
   {
     "rebelot/kanagawa.nvim",
-    lazy = true,
+    opts = {
+      commentStyle = { italic = false },
+      functionStyle = {},
+      keywordStyle = { italic = false },
+      statementStyle = { bold = true },
+    },
+    lazy = false,
   },
 
   -- Configure LazyVim to load colorscheme
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark",
+      colorscheme = "kanagawa",
     },
   },
 }
