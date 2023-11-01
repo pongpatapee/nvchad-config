@@ -7,7 +7,8 @@ local opts = { noremap = true, silent = true }
 local Util = require("lazyvim.util")
 
 -- better escape
-map("i", "kj", "<ESC>", opts)
+-- map("i", "kj", "<ESC>", opts)
+map("i", "jk", "<ESC>", opts)
 
 -- Navigate with tmux panes
 map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", opts)
