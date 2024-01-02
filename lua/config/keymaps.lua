@@ -36,6 +36,7 @@ map("n", "<C-d>", "<C-d>zz", opts)
 map("v", "y", "ygv<ESC>", opts)
 
 -- allow for Ctrl + Backspace for deleting words
+-- map("i", "<C-H>", "<C-W>", opts) -- Can't bind <C-BS> directly, this is the work around
 map("i", "<C-h>", "<C-w>", opts) -- Can't bind <C-BS> directly, this is the work around
 
 -- floating terminal
