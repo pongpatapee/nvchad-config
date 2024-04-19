@@ -16,14 +16,19 @@ return {
     enabled = false,
   },
 
-  -- Notification bar on the top right
   -- {
-  --   "rcarriga/nvim-notify",
+  --   "lukas-reineke/headlines.nvim",
   --   enabled = false,
   -- },
 
-  -- {
-  --   "folke/noice.nvim",
-  --   enabled = false,
-  -- }
+  -- Notification bar on the top right
+  {
+    "rcarriga/nvim-notify",
+    enabled = false,
+  },
+
+  {
+    "folke/noice.nvim",
+    enabled = false,
+  },
 }

@@ -59,6 +59,13 @@ return {
           "TSRainbowViolet",
           "TSRainbowCyan",
         },
+
+        -- -- VScode highlight group
+        -- hlgroups = {
+        --   "TSRainbowYellow",
+        --   "TSRainbowViolet",
+        --   "TSRainbowBlue",
+        -- },
       },
     },
   },
