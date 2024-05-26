@@ -43,6 +43,11 @@ return {
     lazy = false,
   },
 
+  {
+    "Mofiqul/vscode.nvim",
+    lazy = false,
+  },
+
   -- ensure tokyonight colors are here
   {
     "folke/tokyonight.nvim",
