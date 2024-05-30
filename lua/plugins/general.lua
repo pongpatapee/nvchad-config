@@ -9,6 +9,13 @@ return {
   -- added commenting
   {
     "numToStr/Comment.nvim",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      opts = {
+        enable_autocmd = false,
+      },
+    },
     keys = {
       { "gcc", mode = "n" },
       { "gc", mode = "v" },
@@ -17,7 +24,7 @@ return {
     },
     opts = {
       ignore = "^$",
-      pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      -- pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(), -- This line breaks the config
     },
   },
 
