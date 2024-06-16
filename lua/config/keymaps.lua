@@ -16,7 +16,7 @@ map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", opts)
 map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", opts)
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", opts)
 
--- editor like comment binds
+-- vscode like comment binds
 map({ "n", "i" }, "<C-_>", function()
   require("Comment.api").toggle.linewise.current()
 end, opts)
@@ -43,5 +43,8 @@ map("i", "<C-h>", "<C-w>", opts) -- Can't bind <C-BS> directly, this is the work
 local lazyterm = function()
   Util.terminal(nil, { cwd = Util.root() })
 end
-map("n", "<A-i>", lazyterm, { desc = "Terminal (root dir)" })
-map("t", "<A-i>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+map("n", "<A-t>", lazyterm, { desc = "Terminal (root dir)" })
+map("t", "<A-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+
+vim.keymap.del("n", "<leader><leader>")
+map("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run current file, used for plugin development" })
