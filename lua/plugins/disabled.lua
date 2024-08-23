@@ -31,4 +31,14 @@ return {
     "folke/noice.nvim",
     enabled = false,
   },
+
+  -- Disabling mini plugins in favor or other comment/surround plugins
+  {
+    "echasnovski/mini.comment",
+    enabled = false,
+  },
+  {
+    "echasnovski/mini.surround",
+    enabled = false,
+  },
 }

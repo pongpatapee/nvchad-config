@@ -6,29 +6,6 @@ return {
     lazy = false,
   },
 
-  -- added commenting
-  {
-    "numToStr/Comment.nvim",
-    dependencies = {
-      "nvim-treesitter/nvim-treesitter",
-      "JoosepAlviste/nvim-ts-context-commentstring",
-    },
-    keys = {
-      { "gcc", mode = "n" },
-      { "gc", mode = "v" },
-      { "gbc", mode = "n" },
-      { "gb", mode = "v" },
-    },
-    opts = {
-      ignore = "^$",
-    },
-    config = function()
-      require("Comment").setup({
-        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
-      })
-    end,
-  },
-
   --colorizer
   {
     "NvChad/nvim-colorizer.lua",
@@ -74,35 +51,35 @@ return {
   },
 
   -- Transparent background
-  -- {
-  --   "xiyaowong/transparent.nvim",
-  --   opts = {
-  --     groups = { -- table: default groups
-  --       "Normal",
-  --       "NormalNC",
-  --       "Comment",
-  --       "Constant",
-  --       "Special",
-  --       "Identifier",
-  --       "Statement",
-  --       "PreProc",
-  --       "Type",
-  --       "Underlined",
-  --       "Todo",
-  --       "String",
-  --       "Function",
-  --       "Conditional",
-  --       "Repeat",
-  --       "Operator",
-  --       "Structure",
-  --       "LineNr",
-  --       "NonText",
-  --       "SignColumn",
-  --       "CursorLineNr",
-  --       "EndOfBuffer",
-  --     },
-  --     extra_groups = {}, -- table: additional groups that should be cleared
-  --     exclude_groups = {}, -- table: groups you don't want to clear
-  --   },
-  -- },
+  {
+    "xiyaowong/transparent.nvim",
+    opts = {
+      groups = { -- table: default groups
+        "Normal",
+        "NormalNC",
+        "Comment",
+        "Constant",
+        "Special",
+        "Identifier",
+        "Statement",
+        "PreProc",
+        "Type",
+        "Underlined",
+        "Todo",
+        "String",
+        "Function",
+        "Conditional",
+        "Repeat",
+        "Operator",
+        "Structure",
+        "LineNr",
+        "NonText",
+        "SignColumn",
+        "CursorLineNr",
+        "EndOfBuffer",
+      },
+      extra_groups = {}, -- table: additional groups that should be cleared
+      exclude_groups = {}, -- table: groups you don't want to clear
+    },
+  },
 }
