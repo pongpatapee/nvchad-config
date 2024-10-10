@@ -1,3 +1,4 @@
+-- TODO: Broken with neotree
 return  {
     "folke/persistence.nvim",
     event = "BufReadPre",

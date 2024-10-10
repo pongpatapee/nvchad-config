@@ -56,6 +56,7 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 -- buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete Buffer", remap = true })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
@@ -85,14 +86,14 @@ map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
 -- center page when C-d/C-u
-map("n", "<C-u>", "<C-u>zz", opts)
-map("n", "<C-d>", "<C-d>zz", opts)
+map("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
+map("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
 
 -- keeps cursor where it is after yank (by default it goes back up to the top)
-map("v", "y", "ygv<ESC>", opts)
+map("v", "y", "ygv<ESC>", { noremap = true, silent = true })
 
 -- allow for Ctrl + Backspace for deleting words
-map("i", "<C-h>", "<C-w>", opts) -- Can't bind <C-BS> directly, this is the work around
+map("i", "<C-h>", "<C-w>", { noremap = true, silent = true }) -- Can't bind <C-BS> directly, this is the work around
 
 -- For local plugin development
 map("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run current file, used for plugin development" })
