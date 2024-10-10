@@ -1,7 +1,8 @@
 -- This file is loaded after lazy.nvim plugin manager setup
 
 -- Set colorscheme
-vim.cmd.colorscheme "catppuccin"
+-- vim.cmd.colorscheme "catppuccin"
+vim.cmd.colorscheme "onedark"
 
 local opt = vim.opt
 
@@ -39,9 +40,9 @@ opt.undofile = true
 
 opt.list = true -- Show some invisible characters (tabs...
 
--- Decrease mapped sequence wait time
--- Displays which-key popup sooner
-opt.timeoutlen = 300
+-- -- Decrease mapped sequence wait time
+-- -- Displays which-key popup sooner
+-- opt.timeoutlen = 300
 
 opt.showmode = false -- Dont show mode since we have a statusline
 
