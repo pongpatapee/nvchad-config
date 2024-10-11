@@ -36,17 +36,15 @@ return {
                 vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, { buffer = e.buf, desc = "Goto Type Definition" })
                 vim.keymap.set("n", "K", vim.lsp.buf.hover, { buffer = e.buf, desc = "Hover" })
                 vim.keymap.set("n", "gK", vim.lsp.buf.signature_help, { buffer = e.buf, desc = "Signature Help" })
-                vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { buffer = e.buf })
-                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = e.buf })
-                vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { buffer = e.buf })
-                vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { buffer = e.buf })
-                vim.keymap.set("n", "[d", vim.diagnostic.goto_next, { buffer = e.buf })
-                vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, { buffer = e.buf })
-                vim.keymap.set("n", "<leader>ss", builtin.lsp_document_symbols, { buffer = 0 })
-                vim.keymap.set("n", "<leader>sS", builtin.lsp_workspace_symbols, { buffer = e.buf })
+                vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { buffer = e.buf, desc = "Code Rename" })
+                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = e.buf, desc = "Code Action" })
+                vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { buffer = e.buf, desc = "Code Format" })
+                vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { buffer = e.buf, desc = "Code Diagnostics" })
+                vim.keymap.set("n", "[d", vim.diagnostic.goto_next, { buffer = e.buf, desc = "Next Diagnostics" })
+                vim.keymap.set("n", "]d", vim.diagnostic.goto_prev, { buffer = e.buf, desc = "Prev Diagnostics" })
+                vim.keymap.set("n", "<leader>ss", builtin.lsp_document_symbols, { buffer = e.buf, desc = "Search Document Symbols" })
+                vim.keymap.set("n", "<leader>sS", builtin.lsp_workspace_symbols, { buffer = e.buf, desc = "Search Workspace Symbols" })
             end
         })
-
     end,
 }
-

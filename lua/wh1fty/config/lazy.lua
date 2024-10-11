@@ -28,6 +28,7 @@ require("lazy").setup({
 		{ import = "wh1fty/plugins" },
         { import = "wh1fty/plugins/coding" },
 		{ import = "wh1fty/plugins/editor" },
+		{ import = "wh1fty/plugins/ui" },
         { import = "wh1fty/plugins/lsp" },
 		-- If I want to further modularize the config
 		-- { import = "wh1fty/plugins/subfolder" },

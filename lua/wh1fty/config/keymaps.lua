@@ -99,6 +99,6 @@ map("i", "<C-h>", "<C-w>", { noremap = true, silent = true }) -- Can't bind <C-B
 map("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run current file, used for plugin development" })
 
 -- Dedicated copy paste to and from clipboard so I don't have to use vim.opt.clipboard = "unnamedplus" -- Sync with system clipboard
-map({"n", "v"}, "<leader>p", [["+p]])
-map({"n", "v"}, "<leader>y", [["+y]])
+map({"n", "v"}, "<leader>p", [["+p]], { desc = "clipboard paste" })
+map({"n", "v"}, "<leader>y", [["+y]], { desc = "clipboard yank" })
 
