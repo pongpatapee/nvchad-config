@@ -8,7 +8,7 @@ local opt = vim.opt
 
 -- opt.clipboard = "unnamedplus" -- Sync with system clipboard
 
-opt.number = true 
+opt.number = true
 opt.relativenumber = true
 
 opt.splitbelow = true -- Put new windows below current
