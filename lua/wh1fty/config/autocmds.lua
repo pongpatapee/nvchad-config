@@ -1,8 +1,8 @@
 local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
+-- local autocmd = vim.api.nvim_create_autocmd
 
 -- Highlight on yank
-autocmd("TextYankPost", {
+vim.api.nvim_create_autocmd("TextYankPost", {
     -- group = augroup("highlight_yank"),
     callback = function()
         vim.highlight.on_yank()
@@ -10,7 +10,7 @@ autocmd("TextYankPost", {
 })
 
 -- Disable autocomment in newline
-autocmd("BufEnter", {
+vim.api.nvim_create_autocmd("BufEnter", {
     callback = function()
         vim.opt.formatoptions:remove({ "c", "r", "o" })
     end,
@@ -18,7 +18,7 @@ autocmd("BufEnter", {
 })
 
 -- resize splits if window got resized
-autocmd({ "VimResized" }, {
+vim.api.nvim_create_autocmd({ "VimResized" }, {
     group = augroup("resize_splits", {}),
     callback = function()
         local current_tab = vim.fn.tabpagenr()
@@ -56,4 +56,23 @@ vim.api.nvim_create_autocmd("FileType", {
     })
   end,
 })
+
+-- go to last loc when opening a buffer
+vim.api.nvim_create_autocmd("BufReadPost", {
+  group = augroup("last_loc", {}),
+  callback = function(event)
+    local exclude = { "gitcommit" }
+    local buf = event.buf
+    if vim.tbl_contains(exclude, vim.bo[buf].filetype) or vim.b[buf].lazyvim_last_loc then
+      return
+    end
+    vim.b[buf].lazyvim_last_loc = true
+    local mark = vim.api.nvim_buf_get_mark(buf, '"')
+    local lcount = vim.api.nvim_buf_line_count(buf)
+    if mark[1] > 0 and mark[1] <= lcount then
+      pcall(vim.api.nvim_win_set_cursor, 0, mark)
+    end
+  end,
+})
+
 
