@@ -53,9 +53,11 @@ map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
+
 -- buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+-- TODO: fix bd behavior with neotree
 map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete Buffer", remap = true })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n

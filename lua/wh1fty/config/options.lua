@@ -1,7 +1,6 @@
 -- This file is loaded after lazy.nvim plugin manager setup
 
 -- Set colorscheme
--- vim.cmd.colorscheme "catppuccin"
 vim.cmd.colorscheme "onedark"
 
 local opt = vim.opt
