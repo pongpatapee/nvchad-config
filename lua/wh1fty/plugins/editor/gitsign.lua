@@ -52,26 +52,6 @@ return {
                 map('n', '<leader>gtb', gitsigns.toggle_current_line_blame, { desc = '[T]oggle git show [b]lame line' })
                 map('n', '<leader>gtD', gitsigns.toggle_deleted, { desc = '[T]oggle git show [D]eleted' })
 
-                -- TODO: Setup lazygit keybinds
-                -- Lazygit (not technically related to gitsign)
-                -- map("n", "<leader>gg", function() LazyVim.lazygit( { cwd = LazyVim.root.git() }) end, { desc = "Lazygit (Root Dir)" })
-                -- map("n", "<leader>gG", function() LazyVim.lazygit() end, { desc = "Lazygit (cwd)" })
-                -- map("n", "<leader>gb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
-                -- map("n", "<leader>gB", LazyVim.lazygit.browse, { desc = "Git Browse" })
-
-                -- map("n", "<leader>gf", function()
-                -- local git_path = vim.api.nvim_buf_get_name(0)
-                -- LazyVim.lazygit({args = { "-f", vim.trim(git_path) }})
-                -- end, { desc = "Lazygit Current File History" })
-
-                -- map("n", "<leader>gl", function()
-                -- LazyVim.lazygit({ args = { "log" }, cwd = LazyVim.root.git() })
-                -- end, { desc = "Lazygit Log" })
-                -- map("n", "<leader>gL", function()
-                -- LazyVim.lazygit({ args = { "log" } })
-                -- end, { desc = "Lazygit Log (cwd)" })
-
-
             end,
         },
     }

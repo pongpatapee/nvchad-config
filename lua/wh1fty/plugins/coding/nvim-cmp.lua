@@ -29,6 +29,7 @@ return {
             -- Gives completion window borders
             window = {
                 completion = cmp.config.window.bordered(),
+                -- FIX: document border not working
                 documentation = cmp.config.window.bordered(),
             },
 
