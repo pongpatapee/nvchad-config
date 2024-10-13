@@ -1,7 +1,7 @@
 -- This file is loaded after lazy.nvim plugin manager setup
 
 -- Set colorscheme
-vim.cmd.colorscheme "onedark"
+vim.cmd.colorscheme "tokyonight-night"
 
 local opt = vim.opt
 

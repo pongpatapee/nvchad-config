@@ -4,13 +4,21 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
 
     config = function()
+        require('telescope').setup({
+            pickers = {
+                colorscheme = {
+                    enable_preview = true,
+                },
+            },
+        })
+
         -- Note: More lsp keybinds in lsp section
 
         local builtin = require('telescope.builtin')
         -- File
         vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = "Find files" })
         vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = "Find existing buffers" })
-        vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc ="[S]earch by [G]rep" })
+        vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = "[S]earch by [G]rep" })
         vim.keymap.set('n', '<leader>,', builtin.buffers, { desc = 'Find existing buffers' })
 
         -- General search
@@ -27,5 +35,10 @@ return {
         -- git
         vim.keymap.set('n', "<leader>gc", builtin.git_commits, { desc = "[G]it [C]ommits" })
         vim.keymap.set('n', "<leader>gs", builtin.git_status, { desc = "[G]it [S]tatus" })
+
+
+        -- Preview and select colorscheme
+        vim.keymap.set("n", "<leader>uc", "<cmd>Telescope colorscheme<cr>", {desc = "[U]i [C]olorscheme, searches through colorscheme"})
+
     end
 }
