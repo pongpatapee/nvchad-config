@@ -36,7 +36,7 @@ return {
         -- General search
         vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch Help Tags" })
         vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-        vim.keymap.set("n", "<leader>sT", builtin.builtin, { desc = "[S]earch [S]elect Telescope" }) -- Search for any possible telescope search
+        vim.keymap.set("n", "<leader>sb", builtin.builtin, { desc = "[S]earch [B]uiltin Telescope" }) -- Search for any possible telescope search
         vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
         vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
         vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
