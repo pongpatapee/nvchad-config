@@ -53,12 +53,14 @@ map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
 map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move Down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 
-
 -- buffers
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 -- TODO: fix bd behavior with neotree
 map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete Buffer", remap = true })
+map("n", "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", { desc = "Toggle Pin" })
+map("n", "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", { desc = "Delete Non-Pinned Buffers" })
+map("n", "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>", { desc = "Delete Other Buffers" })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
 map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next Search Result" })
@@ -101,6 +103,10 @@ map("i", "<C-h>", "<C-w>", { noremap = true, silent = true }) -- Can't bind <C-B
 map("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run current file, used for plugin development" })
 
 -- Dedicated copy paste to and from clipboard so I don't have to use vim.opt.clipboard = "unnamedplus" -- Sync with system clipboard
-map({"n", "v"}, "<leader>p", [["+p]], { desc = "clipboard paste" })
-map({"n", "v"}, "<leader>y", [["+y]], { desc = "clipboard yank" })
+map({ "n", "v" }, "<leader>p", [["+p]], { desc = "clipboard paste" })
+map({ "n", "v" }, "<leader>y", [["+y]], { desc = "clipboard yank" })
 
+map("n", "<leader>ud", function()
+    vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+    print("Show diagnostics", vim.diagnostic.is_enabled())
+end, { desc = "[U]i [D]iagnostics toggle" })

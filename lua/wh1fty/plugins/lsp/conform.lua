@@ -42,7 +42,7 @@ return {
             "<leader>ctf",
             function()
                 vim.g.auto_format_on_save = not vim.g.auto_format_on_save
-                print("Auto format: " .. vim.g.auto_format_on_save)
+                print("Auto format:", vim.g.auto_format_on_save)
             end,
             mode = "n",
             desc = "Code Toggle Auto Format",
