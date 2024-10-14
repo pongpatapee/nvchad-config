@@ -1,6 +1,6 @@
 return {
-    'echasnovski/mini.ai',
-    version = '*',
+    "echasnovski/mini.ai",
+    version = "*",
     opts = function()
         local ai = require("mini.ai")
         return {
@@ -12,12 +12,11 @@ return {
                 }),
                 f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }), -- function
                 c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }), -- class
-                d = { "%f[%d]%d+" },                                                    -- digits
+                d = { "%f[%d]%d+" }, -- digits
             },
         }
     end,
 }
-
 
 -- -- LazyVim Config
 -- {
@@ -55,37 +54,34 @@ return {
 --       end)
 --     end)
 --   end,
--- }, 
+-- },
 
-
-  -- local objects = {
-  --   { " ", desc = "whitespace" },
-  --   { '"', desc = '" string' },
-  --   { "'", desc = "' string" },
-  --   { "(", desc = "() block" },
-  --   { ")", desc = "() block with ws" },
-  --   { "<", desc = "<> block" },
-  --   { ">", desc = "<> block with ws" },
-  --   { "?", desc = "user prompt" },
-  --   { "U", desc = "use/call without dot" },
-  --   { "[", desc = "[] block" },
-  --   { "]", desc = "[] block with ws" },
-  --   { "_", desc = "underscore" },
-  --   { "`", desc = "` string" },
-  --   { "a", desc = "argument" },
-  --   { "b", desc = ")]} block" },
-  --   { "c", desc = "class" },
-  --   { "d", desc = "digit(s)" },
-  --   { "e", desc = "CamelCase / snake_case" },
-  --   { "f", desc = "function" },
-  --   { "g", desc = "entire file" },
-  --   { "i", desc = "indent" },
-  --   { "o", desc = "block, conditional, loop" },
-  --   { "q", desc = "quote `\"'" },
-  --   { "t", desc = "tag" },
-  --   { "u", desc = "use/call" },
-  --   { "{", desc = "{} block" },
-  --   { "}", desc = "{} with ws" },
-  -- }
-
-
+-- local objects = {
+--   { " ", desc = "whitespace" },
+--   { '"', desc = '" string' },
+--   { "'", desc = "' string" },
+--   { "(", desc = "() block" },
+--   { ")", desc = "() block with ws" },
+--   { "<", desc = "<> block" },
+--   { ">", desc = "<> block with ws" },
+--   { "?", desc = "user prompt" },
+--   { "U", desc = "use/call without dot" },
+--   { "[", desc = "[] block" },
+--   { "]", desc = "[] block with ws" },
+--   { "_", desc = "underscore" },
+--   { "`", desc = "` string" },
+--   { "a", desc = "argument" },
+--   { "b", desc = ")]} block" },
+--   { "c", desc = "class" },
+--   { "d", desc = "digit(s)" },
+--   { "e", desc = "CamelCase / snake_case" },
+--   { "f", desc = "function" },
+--   { "g", desc = "entire file" },
+--   { "i", desc = "indent" },
+--   { "o", desc = "block, conditional, loop" },
+--   { "q", desc = "quote `\"'" },
+--   { "t", desc = "tag" },
+--   { "u", desc = "use/call" },
+--   { "{", desc = "{} block" },
+--   { "}", desc = "{} with ws" },
+-- }

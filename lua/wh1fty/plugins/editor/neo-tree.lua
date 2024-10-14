@@ -33,7 +33,6 @@ return {
                 hide_dotfiles = true,
                 hide_gitignored = true,
             },
-
         },
         source_selector = {
             winbar = true,
@@ -59,5 +58,4 @@ return {
             desc = "Explorer NeoTree",
         },
     },
-
 }

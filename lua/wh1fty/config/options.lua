@@ -1,7 +1,7 @@
 -- This file is loaded after lazy.nvim plugin manager setup
 
 -- Set colorscheme
-vim.cmd.colorscheme "tokyonight-night"
+vim.cmd.colorscheme("onedark")
 
 local opt = vim.opt
 
@@ -46,5 +46,3 @@ opt.timeoutlen = 300
 opt.showmode = false -- Dont show mode since we have a statusline
 
 opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
-
-

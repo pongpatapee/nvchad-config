@@ -1,7 +1,7 @@
 return {
-    'akinsho/bufferline.nvim',
+    "akinsho/bufferline.nvim",
     version = "*",
-    dependencies = 'nvim-tree/nvim-web-devicons',
+    dependencies = "nvim-tree/nvim-web-devicons",
 
     opts = {
         options = {
@@ -10,8 +10,8 @@ return {
                     filetype = "neo-tree",
                     text = "File Explorer",
                     highlight = "Directory",
-                    separator = true -- use a "true" to enable the default, or set your own character
-                }
+                    separator = true, -- use a "true" to enable the default, or set your own character
+                },
             },
         },
     },

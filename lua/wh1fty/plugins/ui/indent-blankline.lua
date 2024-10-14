@@ -10,8 +10,8 @@ return {
                 filetypes = {
                     "dashboard",
                     "alpha",
-                }
+                },
             },
-        }
-    }
+        },
+    },
 }

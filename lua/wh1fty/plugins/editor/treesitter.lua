@@ -3,10 +3,10 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         dependencies = {
-            "nvim-treesitter/nvim-treesitter-textobjects"
+            "nvim-treesitter/nvim-treesitter-textobjects",
         },
         config = function()
-            require 'nvim-treesitter.configs'.setup {
+            require("nvim-treesitter.configs").setup({
 
                 -- Install parsers synchronously (only applied to `ensure_installed`)
                 sync_install = false,
@@ -52,8 +52,7 @@ return {
                     "xml",
                     "yaml",
                 },
-
-            }
-        end
-    }
+            })
+        end,
+    },
 }

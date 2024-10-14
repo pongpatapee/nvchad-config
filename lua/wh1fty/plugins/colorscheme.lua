@@ -3,7 +3,7 @@ return {
     {
         "navarasu/onedark.nvim",
         opts = {
-            style = "darker"
+            style = "darker",
         },
     },
     {
@@ -13,7 +13,7 @@ return {
         opts = {},
     },
 
-    { 'projekt0n/github-nvim-theme', name = 'github-theme' },
+    { "projekt0n/github-nvim-theme", name = "github-theme" },
     { "bluz71/vim-moonfly-colors", name = "moonfly" },
     "rebelot/kanagawa.nvim",
     "EdenEast/nightfox.nvim",
