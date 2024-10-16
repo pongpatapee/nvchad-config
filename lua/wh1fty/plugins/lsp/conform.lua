@@ -1,5 +1,6 @@
 return {
     "stevearc/conform.nvim",
+    lazy = false,
     cmd = { "ConformInfo" },
     opts = {
         notify_on_error = false,
