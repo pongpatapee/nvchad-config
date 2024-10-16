@@ -6,10 +6,12 @@ return {
         "williamboman/mason.nvim",
         -- Assist with hooking lsp installed through mason with lsp-config
         "williamboman/mason-lspconfig.nvim",
+        -- Extend ensure_installed to tools other than lsp servers
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
 
-    config = function()
-        local servers = {
+    opts = {
+        servers = {
             lua_ls = {
                 -- cmd = {...},
                 -- filetypes = { ...},
@@ -27,8 +29,36 @@ return {
                 --     globals = { "vim" },
                 -- },
             },
-        }
-        local ensure_installed = { "lua_ls" }
+        },
+    },
+
+    config = function(_, opts)
+        local servers = opts.servers or {}
+
+        -- local servers = {
+        --     lua_ls = {
+        --         -- cmd = {...},
+        --         -- filetypes = { ...},
+        --         -- capabilities = {},
+        --         settings = {
+        --             Lua = {
+        --                 completion = {
+        --                     callSnippet = "Replace",
+        --                 },
+        --                 -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+        --                 -- diagnostics = { disable = { 'missing-fields' } },
+        --             },
+        --         },
+        --         -- diagnostics = {
+        --         --     globals = { "vim" },
+        --         -- },
+        --     },
+        -- }
+
+        local ensure_installed = vim.tbl_keys(servers or {})
+        vim.list_extend(ensure_installed, { "stylua" })
+        -- ensure_installed will be extended by language config in other files through mason opts
+        vim.list_extend(ensure_installed, opts.ensure_installed or {})
 
         -- LSP servers and clients are able to communicate to each other what features they support.
         --  By default, Neovim doesn't support everything that is in the LSP specification.
@@ -38,8 +68,11 @@ return {
         capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
         require("mason").setup()
-        require("mason-lspconfig").setup({
+        require("mason-tool-installer").setup({
             ensure_installed = ensure_installed,
+        })
+        require("mason-lspconfig").setup({
+            -- ensure_installed = ensure_installed,
             handlers = {
                 function(server_name)
                     local server = servers[server_name] or {}

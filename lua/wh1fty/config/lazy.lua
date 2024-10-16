@@ -30,6 +30,7 @@ require("lazy").setup({
         { import = "wh1fty/plugins/editor" },
         { import = "wh1fty/plugins/ui" },
         { import = "wh1fty/plugins/lsp" },
+        { import = "wh1fty/plugins/langs" },
         -- If I want to further modularize the config
         -- { import = "wh1fty/plugins/subfolder" },
     },
@@ -38,4 +39,9 @@ require("lazy").setup({
     install = { colorscheme = { "habamax" } },
     -- automatically check for plugin updates
     checker = { enabled = false },
+
+    -- disable notification when config has cahnged
+    change_detection = {
+        notify = false,
+    },
 })
