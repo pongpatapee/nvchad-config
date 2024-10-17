@@ -106,7 +106,12 @@ map("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run current file, u
 map({ "n", "v" }, "<leader>p", [["+p]], { desc = "clipboard paste" })
 map({ "n", "v" }, "<leader>y", [["+y]], { desc = "clipboard yank" })
 
+-- UI toggles
 map("n", "<leader>ud", function()
     vim.diagnostic.enable(not vim.diagnostic.is_enabled())
     print("Show diagnostics", vim.diagnostic.is_enabled())
-end, { desc = "[U]i [D]iagnostics toggle" })
+end, { desc = "[U]i [D]iagnostics Toggle" })
+
+map("n", "<leader>uh", function(event)
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
+end, { desc = "[U]i [H]int Toggle" })
