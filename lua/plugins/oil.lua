@@ -12,6 +12,13 @@ return {
         view_options = {
           show_hidden = true,
         },
+        keymaps = {
+          ["<C-h>"] = false,
+          ["<C-l>"] = false,
+          ["<C-k>"] = false,
+          ["<C-j>"] = false,
+          ["<M-h>"] = "actions.select_split",
+        },
       })
     end,
   },
