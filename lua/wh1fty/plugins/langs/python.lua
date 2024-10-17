@@ -10,10 +10,13 @@ return {
 
             -- Mason opts configured with lspconfig in lsp.lua
             ensure_installed = {
-                "pyright",
-                "ruff",
-                "black",
-                "isort",
+                -- lsp.lua configures servers to be part of ensure_installed,
+                -- no need to specify twice although it doesn't matter if it is
+
+                -- "pyright", -- python lsp
+                -- "ruff", -- linter + lsp
+                "black", -- formatter
+                "isort", -- import organizer
             },
         },
     },

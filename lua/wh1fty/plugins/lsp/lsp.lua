@@ -10,6 +10,10 @@ return {
         "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
 
+    -- Extend opts that needs to be merged into the parent spec
+    -- Since ensure_installed is a mason thing, we need to specify this for lspconfig
+    opts_extend = { "ensure_installed" },
+
     opts = {
         servers = {
             lua_ls = {
@@ -35,30 +39,16 @@ return {
     config = function(_, opts)
         local servers = opts.servers or {}
 
-        -- local servers = {
-        --     lua_ls = {
-        --         -- cmd = {...},
-        --         -- filetypes = { ...},
-        --         -- capabilities = {},
-        --         settings = {
-        --             Lua = {
-        --                 completion = {
-        --                     callSnippet = "Replace",
-        --                 },
-        --                 -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-        --                 -- diagnostics = { disable = { 'missing-fields' } },
-        --             },
-        --         },
-        --         -- diagnostics = {
-        --         --     globals = { "vim" },
-        --         -- },
-        --     },
-        -- }
-
         local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, { "stylua" })
         -- ensure_installed will be extended by language config in other files through mason opts
         vim.list_extend(ensure_installed, opts.ensure_installed or {})
+
+        -- NOTE: Can debug plugins/opts with something like this
+        -- print("Ensure installed:")
+        -- print(vim.inspect(ensure_installed))
+        -- print("Opts being passed in:")
+        -- print(vim.inspect(opts))
 
         -- LSP servers and clients are able to communicate to each other what features they support.
         --  By default, Neovim doesn't support everything that is in the LSP specification.
