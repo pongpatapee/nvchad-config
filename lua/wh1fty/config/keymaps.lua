@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 local map = vim.keymap.set
+local Utils = require("wh1fty.utils")
 
 -- better escape
 map("i", "jk", "<ESC>", { noremap = true, silent = true })
@@ -57,7 +58,7 @@ map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move Up" })
 map("n", "<S-h>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 map("n", "<S-l>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 -- TODO: fix bd behavior with neotree
-map("n", "<leader>bd", "<cmd>bdelete<cr>", { desc = "Delete Buffer", remap = true })
+map("n", "<leader>bd", Utils.bufremove, { desc = "Delete Buffer", remap = true })
 map("n", "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", { desc = "Toggle Pin" })
 map("n", "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", { desc = "Delete Non-Pinned Buffers" })
 map("n", "<leader>bo", "<Cmd>BufferLineCloseOthers<CR>", { desc = "Delete Other Buffers" })
