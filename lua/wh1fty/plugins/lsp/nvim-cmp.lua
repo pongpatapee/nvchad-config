@@ -9,14 +9,15 @@ return {
 
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
-        -- 'rafamadriz/friendly-snippets',
+        "rafamadriz/friendly-snippets",
     },
 
     config = function()
-        -- -- For friendly-snippets
-        -- require('luasnip.loaders.from_vscode').lazy_load()
+        -- For friendly-snippets
+        require("luasnip.loaders.from_vscode").lazy_load()
 
         local cmp = require("cmp")
+        local luasnip = require("luasnip")
 
         cmp.setup({
             snippet = {
@@ -43,20 +44,18 @@ return {
                 ["<C-e>"] = cmp.mapping.abort(),
                 ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 
-                -- TODO: Decide how to handle keybinds to not conflict with current keymaps
-
-                -- <c-l> will move you to the right of each of the expansion locations.
-                -- <c-h> is similar, except moving you backwards.
-                -- ["<C-l>"] = cmp.mapping(function()
-                --     if luasnip.expand_or_locally_jumpable() then
-                --         luasnip.expand_or_jump()
-                --     end
-                -- end, { "i", "s" }),
-                -- ["<C-h>"] = cmp.mapping(function()
-                --     if luasnip.locally_jumpable(-1) then
-                --         luasnip.jump(-1)
-                --     end
-                -- end, { "i", "s" }),
+                -- <a-l> will move you to the right of each of the expansion locations.
+                -- <a-h> is similar, except moving you backwards.
+                ["<A-l>"] = cmp.mapping(function()
+                    if luasnip.expand_or_locally_jumpable() then
+                        luasnip.expand_or_jump()
+                    end
+                end, { "i", "s" }),
+                ["<A-h>"] = cmp.mapping(function()
+                    if luasnip.locally_jumpable(-1) then
+                        luasnip.jump(-1)
+                    end
+                end, { "i", "s" }),
             }),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
