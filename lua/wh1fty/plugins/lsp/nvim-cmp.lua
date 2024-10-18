@@ -17,7 +17,6 @@ return {
         -- require('luasnip.loaders.from_vscode').lazy_load()
 
         local cmp = require("cmp")
-        local luasnip = require("luasnip")
 
         cmp.setup({
             snippet = {
@@ -29,7 +28,9 @@ return {
             -- Gives completion window borders
             window = {
                 completion = cmp.config.window.bordered(),
-                -- FIX: document border not working
+                -- This option doesn't seem to affect anything
+                -- border doc is working via vim.lsp.handlers["textDocument/..."]
+                -- can be found in lsp.lua
                 documentation = cmp.config.window.bordered(),
             },
 

@@ -78,6 +78,8 @@ return {
         -- Add lsp keybinds
         vim.api.nvim_create_autocmd("LspAttach", {
             callback = function(e)
+                -- set keymaps
+
                 local builtin = require("telescope.builtin")
                 -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = e.buf, desc = "Goto Definition" })
                 -- vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = e.buf, desc = "References" })
@@ -117,6 +119,11 @@ return {
                     builtin.lsp_workspace_symbols,
                     { buffer = e.buf, desc = "Search Workspace Symbols" }
                 )
+
+                -- Get bordered docs
+                vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+                vim.lsp.handlers["textDocument/signatureHelp"] =
+                    vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
             end,
         })
     end,
