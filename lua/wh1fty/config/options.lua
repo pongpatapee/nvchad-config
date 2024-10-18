@@ -1,7 +1,11 @@
 -- This file is loaded after lazy.nvim plugin manager setup
 
+local Utils = require("wh1fty.utils")
+
 -- Set colorscheme
-vim.cmd.colorscheme("kanagawa")
+-- local colorscheme = Utils.get_random_colorscheme()
+local colorscheme = "kanagawa"
+vim.cmd.colorscheme(colorscheme)
 
 local opt = vim.opt
 

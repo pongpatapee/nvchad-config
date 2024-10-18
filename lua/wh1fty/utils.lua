@@ -1,5 +1,32 @@
 local M = {}
 
+function M.get_random_colorscheme()
+    local colorschemes = {
+        "onedark",
+        "tokyonight-night",
+        "kanagawa",
+        "catppuccin",
+        "carbonfox",
+        "duskfox",
+        "nightfox",
+        "nordfox",
+        "terafox",
+        "github_dark_default",
+        "retrobox",
+        "gruvbox-material",
+        "kanagawa-dragon",
+        "kanagawa-wave",
+        "moonfly",
+    }
+
+    -- required otherwise math.random always return the same number
+    math.randomseed(os.time())
+
+    local rand_ind = math.random(#colorschemes)
+    local colorscheme = colorschemes[rand_ind]
+    return colorscheme
+end
+
 -- Copied from lazyvim
 -- Help fix awkward behavior of default :bdelete which
 -- focuses neotree after deleting a buffer
