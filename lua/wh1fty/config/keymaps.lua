@@ -118,3 +118,8 @@ end, { desc = "[U]i [D]iagnostics Toggle" })
 map("n", "<leader>uh", function(event)
     vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
 end, { desc = "[U]i [H]int Toggle" })
+
+map("n", "<leader>urc", function()
+    local colorscheme = Utils.get_random_colorscheme()
+    vim.cmd.colorscheme(colorscheme)
+end, { desc = "Set Random Colorscheme" })
