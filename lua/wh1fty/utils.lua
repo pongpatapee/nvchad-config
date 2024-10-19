@@ -1,5 +1,30 @@
 local M = {}
 
+function M.get_shortened_path()
+    -- package.config is a lua specific thing. It is a string
+    -- that contains the os related configurations first line
+    -- is the directory separator string. Default is '\' for
+    -- Windows and '/' for all other systems.
+
+    -- %:p gives absolute path
+    -- %:. gives relative path
+    local path = vim.fn.expand("%:.")
+    local path_sep = package.config:sub(1, 1)
+    local parts = vim.split(path, path_sep)
+    local max_dir = 4
+
+    if #parts <= max_dir then
+        return path
+    end
+
+    local shortened_parts = {}
+    table.insert(shortened_parts, parts[1])
+    table.insert(shortened_parts, "...")
+    table.insert(shortened_parts, parts[#parts - 1])
+    table.insert(shortened_parts, parts[#parts])
+
+    return table.concat(shortened_parts, path_sep)
+end
 function M.get_random_colorscheme()
     local colorschemes = {
         "onedark",
