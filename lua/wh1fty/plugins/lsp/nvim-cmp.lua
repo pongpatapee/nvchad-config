@@ -45,13 +45,13 @@ return {
                 ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 
                 -- will move you to the right of each of the expansion locations.
-                ["<Tab>"] = cmp.mapping(function()
+                ["<A-l>"] = cmp.mapping(function()
                     if luasnip.expand_or_locally_jumpable() then
                         luasnip.expand_or_jump()
                     end
                 end, { "i", "s" }),
                 -- is similar, except moving you backwards.
-                ["<S-Tab>"] = cmp.mapping(function()
+                ["<A-h>"] = cmp.mapping(function()
                     if luasnip.locally_jumpable(-1) then
                         luasnip.jump(-1)
                     end
