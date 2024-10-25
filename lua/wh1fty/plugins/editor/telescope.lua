@@ -32,6 +32,7 @@ return {
         vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find existing buffers" })
         vim.keymap.set("n", "<leader>/", builtin.live_grep, { desc = "[S]earch by [G]rep" })
         vim.keymap.set("n", "<leader>,", builtin.buffers, { desc = "Find existing buffers" })
+        vim.keymap.set("n", "<leader>fo", builtin.oldfiles, { desc = "[S]earch Recent Files" })
 
         -- General search
         vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch Help Tags" })
@@ -41,7 +42,6 @@ return {
         vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
         vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
         -- vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
-        vim.keymap.set("n", "<leader>sR", builtin.oldfiles, { desc = "[S]earch Recent Files" })
         vim.keymap.set("n", "<leader>sq", builtin.quickfix, { desc = "[S]earch [Q]uickfix List" })
 
         -- git
