@@ -7,8 +7,8 @@ return {
 
         opts = {
             indent = {
-                char = "│",
-                tab_char = "│", -- helps with go files in particular
+                char = "▎",
+                tab_char = "▎", -- helps with go files in particular
             },
             exclude = {
                 filetypes = {
