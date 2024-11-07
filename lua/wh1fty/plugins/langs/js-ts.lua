@@ -5,9 +5,9 @@ return {
             servers = {
                 -- copy lazyvim for now
                 -- TODO: setup ts_ls instead
-                ts_ls = {
-                    enabled = false,
-                },
+                -- ts_ls = {
+                --     enabled = false,
+                -- },
                 vtsls = {
                     -- explicitly add default filetypes, so that we can extend
                     -- them in related extras
