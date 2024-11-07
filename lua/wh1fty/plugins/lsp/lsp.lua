@@ -15,6 +15,10 @@ return {
     opts_extend = { "ensure_installed" },
 
     opts = {
+        -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
+        -- Be aware that you also will need to properly configure your LSP server to
+        -- provide the inlay hints.
+        inlay_hints = { enabled = true },
         servers = {
             lua_ls = {
                 -- cmd = {...},
@@ -29,9 +33,14 @@ return {
                         -- diagnostics = { disable = { 'missing-fields' } },
                     },
                 },
-                -- diagnostics = {
-                --     globals = { "vim" },
-                -- },
+                hint = {
+                    enable = true,
+                    setType = false,
+                    paramType = true,
+                    paramName = "Disable",
+                    semicolon = "Disable",
+                    arrayIndex = "Disable",
+                },
             },
         },
     },
@@ -75,11 +84,10 @@ return {
             },
         })
 
-        -- Add lsp keybinds
+        -- Add lsp on attach functionalities
         vim.api.nvim_create_autocmd("LspAttach", {
             callback = function(e)
                 -- set keymaps
-
                 local builtin = require("telescope.builtin")
                 -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = e.buf, desc = "Goto Definition" })
                 -- vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = e.buf, desc = "References" })
@@ -124,6 +132,22 @@ return {
                 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
                 vim.lsp.handlers["textDocument/signatureHelp"] =
                     vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
+
+                vim.keymap.set("n", "<leader>uh", function()
+                    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+                    local msg = "Enable inlay_hint " .. tostring(vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }))
+                    vim.notify(msg, vim.log.levels.INFO)
+                end, { desc = "[U]i [H]int Toggle" })
+
+                -- NOTE: If I only want to enable keymap if client supports inlayhints
+                -- local client = vim.lsp.get_client_by_id(e.data.client_id)
+                -- if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+                --     vim.keymap.set("n", "<leader>uh", function()
+                --         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+                --         local msg = "Enable inlay_hint " .. tostring(vim.lsp.inlay_hint.is_enabled({ bufnr = 0 }))
+                --         vim.notify(msg, vim.log.levels.INFO)
+                --     end, { desc = "[U]i [H]int Toggle" })
+                -- end
             end,
         })
     end,
