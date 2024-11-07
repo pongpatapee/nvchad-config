@@ -111,13 +111,20 @@ map({ "n", "v" }, "<leader>y", [["+y]], { desc = "clipboard yank" })
 
 -- UI toggles
 map("n", "<leader>ud", function()
-    vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-    print("Show diagnostics", vim.diagnostic.is_enabled())
+    vim.diagnostic.enable(not vim.diagnostic.is_enabled({ bufnr = 0 }), { bufnr = 0 })
+    local msg = "Show diagnostics " .. tostring(vim.diagnostic.is_enabled({ bufnr = 0 }))
+    vim.notify(msg, vim.log.levels.INFO)
 end, { desc = "[U]i [D]iagnostics Toggle" })
 
-map("n", "<leader>uh", function(event)
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
-end, { desc = "[U]i [H]int Toggle" })
+map("n", "<leader>uw", function()
+    -- vim.cmd("set wrap!")
+
+    -- wo = window options
+    vim.wo.wrap = not vim.wo.wrap
+
+    local msg = "Enable wrap " .. tostring(vim.wo.wrap)
+    vim.notify(msg, vim.log.levels.INFO)
+end, { desc = "Ui Wrap Toggle" })
 
 map("n", "<leader>urc", function()
     local colorscheme = Utils.get_random_colorscheme()
