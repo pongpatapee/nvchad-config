@@ -22,6 +22,9 @@ return {
             lazygit:toggle()
         end, { desc = "Lazygit Log" })
 
+        -- Override entering normal mode in lazygit ("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
+        vim.keymap.set("t", "<esc>", "<esc>", { buffer = lazygit.bufnr, nowait = true })
+
         -- regular terminal command
         vim.keymap.set({ "n", "t" }, "<A-t>", toggleterm, { desc = "vscode like terminal" })
     end,
