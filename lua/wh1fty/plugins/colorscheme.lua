@@ -20,4 +20,5 @@ return {
     "Mofiqul/vscode.nvim",
     "ellisonleao/gruvbox.nvim",
     "sainnhe/gruvbox-material",
+    "tiagovla/tokyodark.nvim",
 }
