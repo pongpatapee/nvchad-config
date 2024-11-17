@@ -26,18 +26,28 @@ return {
             textobject = "gc",
         },
     },
-    keys = {
-        -- Use same keybind in insert mode
-        {
-            mode = "i",
-            "<C-_>",
-            function()
-                local curr_win = vim.api.nvim_get_current_win()
-                local cursor_pos = vim.api.nvim_win_get_cursor(curr_win)
-                local line = cursor_pos[1]
+    config = function(_, opts)
+        require("mini.comment").setup(opts)
+        vim.keymap.set("i", "<C-_>", function()
+            local curr_win = vim.api.nvim_get_current_win()
+            local cursor_pos = vim.api.nvim_win_get_cursor(curr_win)
+            local line = cursor_pos[1]
 
-                require("mini.comment").toggle_lines(line, line)
-            end,
-        },
-    },
+            require("mini.comment").toggle_lines(line, line)
+        end, {})
+    end,
+    -- keys = {
+    --     -- Use same keybind in insert mode
+    --     {
+    --         mode = "i",
+    --         "<C-_>",
+    --         function()
+    --             local curr_win = vim.api.nvim_get_current_win()
+    --             local cursor_pos = vim.api.nvim_win_get_cursor(curr_win)
+    --             local line = cursor_pos[1]
+
+    --             require("mini.comment").toggle_lines(line, line)
+    --         end,
+    --     },
+    -- },
 }
