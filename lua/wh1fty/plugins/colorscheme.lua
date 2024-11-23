@@ -21,4 +21,5 @@ return {
     "ellisonleao/gruvbox.nvim",
     "sainnhe/gruvbox-material",
     "tiagovla/tokyodark.nvim",
+    { "rose-pine/neovim", name = "rose-pine" },
 }
