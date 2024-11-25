@@ -1,5 +1,6 @@
 return {
     "HiPhish/rainbow-delimiters.nvim",
+    -- enabled = false,
     opts = {
         highlight = {
             -- Can be any highlight group from neovim

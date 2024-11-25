@@ -4,7 +4,7 @@ local Utils = require("wh1fty.utils")
 
 -- Set colorscheme
 -- local colorscheme = Utils.get_random_colorscheme()
-local colorscheme = "kanagawa"
+local colorscheme = "vscode"
 vim.cmd.colorscheme(colorscheme)
 
 local opt = vim.opt
