@@ -103,7 +103,9 @@ map("v", "y", "ygv<ESC>", { noremap = true, silent = true })
 map("i", "<C-h>", "<C-w>", { noremap = true, silent = true }) -- Can't bind <C-BS> directly, this is the work around
 
 -- For local plugin development
-map("n", "<leader><leader>x", "<cmd>source %<cr>", { desc = "Run current file, used for plugin development" })
+map("n", "<leader><leader>xf", "<cmd>source %<cr>", { desc = "Run current file, used for plugin development" })
+map("n", "<leader><leader>xl", ":.lua<cr>", { desc = "Execute current line in lua" })
+map("v", "<leader><leader>x", ":lua<cr>", { desc = "Execute current selection in lua" })
 
 -- Dedicated copy paste to and from clipboard so I don't have to use vim.opt.clipboard = "unnamedplus" -- Sync with system clipboard
 map({ "n", "v" }, "<leader>p", [["+p]], { desc = "clipboard paste" })
