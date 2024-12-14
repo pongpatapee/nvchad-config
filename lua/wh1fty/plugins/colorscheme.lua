@@ -36,7 +36,7 @@ return {
             transparent = false,
             -- Override colors (see ./lua/vscode/colors.lua)
             color_overrides = {
-                vscBack = "#000001",
+                -- vscBack = "#000001",
                 -- vscLineNumber = "#FFFFFF",
             },
         },
