@@ -1,5 +1,5 @@
 return {
-
+    enabled = true,
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
     dependencies = {
@@ -47,6 +47,36 @@ return {
         },
         window = {
             width = 33,
+        },
+
+        default_component_configs = {
+            git_status = {
+                symbols = {
+                    -- -- Change type
+                    -- added = "✚",
+                    -- deleted = "✖",
+                    -- modified = "",
+                    -- renamed = "󰁕",
+                    -- -- Status type
+                    -- untracked = "",
+                    -- ignored = "",
+                    -- unstaged = "󰄱",
+                    -- staged = "",
+                    -- conflict = "",
+
+                    -- Change type
+                    added = "✚",
+                    deleted = "✖",
+                    modified = "M",
+                    renamed = "󰁕",
+                    -- Status type
+                    untracked = "U",
+                    ignored = "",
+                    unstaged = "",
+                    staged = "",
+                    conflict = "",
+                },
+            },
         },
     },
     keys = {
