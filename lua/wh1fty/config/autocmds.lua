@@ -83,6 +83,8 @@ vim.api.nvim_create_autocmd("User", {
     pattern = "PersistenceSavePre",
     desc = "Fix neotree before saving session",
     callback = function()
-        vim.cmd("Neotree close")
+        -- protected call to avoid Neotree close not a command
+        -- when closing neovim
+        pcall(vim.cmd, "Neotree close")
     end,
 })
