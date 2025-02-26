@@ -43,8 +43,8 @@ return {
             },
             query = {
                 -- Disable react/jsx highlighting
-                javascript = "rainbow-parens",
-                tsx = "rainbow-parens",
+                -- javascript = "rainbow-parens",
+                -- tsx = "rainbow-parens",
             },
         }
         require("rainbow-delimiters.setup").setup(opts)
